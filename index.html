@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fresh Cut Barbershop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #0e0e0e;
+    color: #fff;
+}
+
+header {
+    background: linear-gradient(to right, #000, #1a1a1a);
+    text-align: center;
+    padding: 60px 20px;
+}
+
+header h1 {
+    color: #d4af37;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #ccc;
+    font-size: 1.2em;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 14px 25px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.services, .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #d4af37;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Fresh Cut Barbershop</h1>
+    <p>Luxury Grooming • Sharp Fades • Confidence</p>
+    <a class="btn" href="#booking">Book Online</a>
+    <a class="btn" href="https://wa.me/27712345678" target="_blank">WhatsApp Booking</a>
+</header>
+
+<section>
+<h2>Our Services</h2>
+<div class="services">
+    <div class="card"><h3>Haircut</h3><p>R120</p></div>
+    <div class="card"><h3>Fade</h3><p>R150</p></div>
+    <div class="card"><h3>Beard Trim</h3><p>R80</p></div>
+    <div class="card"><h3>Haircut + Beard</h3><p>R200</p></div>
+</div>
+</section>
+
+<section>
+<h2>Gallery</h2>
+<div class="gallery">
+    <div class="card"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a"></div>
+    <div class="card"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70"></div>
+</div>
+</section>
+
+<section id="booking">
+<h2>Online Booking</h2>
+<form onsubmit="sendBooking(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <select id="service">
+        <option>Haircut</option>
+        <option>Fade</option>
+        <option>Beard Trim</option>
+        <option>Haircut + Beard</option>
+    </select>
+    <input type="date" id="date" required>
+    <button type="submit">Submit Booking</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Fresh Cut Barbershop | All Rights Reserved</p>
+</footer>
+
+<script>
+function sendBooking(e) {
+    e.preventDefault();
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let service = document.getElementById("service").value;
+    let date = document.getElementById("date").value;
+
+    let message = `Hello, I want to book an appointment:%0AName: ${name}%0APhone: ${phone}%0AService: ${service}%0ADate: ${date}`;
+    window.open("https://wa.me/27712345678?text=" + message, "_blank");
+}
+</script>
+
+</body>
+</html>
