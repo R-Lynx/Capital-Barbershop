@@ -4,70 +4,226 @@
 <meta charset="UTF-8">
 <title>Capital Barbershop | Professional Grooming</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0f0f0f;color:#fff}
-header{background:linear-gradient(to right,#000,#1a1a1a);padding:70px 20px;text-align:center}
-header h1{color:#d4af37;font-size:3rem;margin-bottom:10px}
-header p{color:#ccc;font-size:1.2rem}
-.btn{display:inline-block;margin:10px;padding:14px 26px;background:#d4af37;color:#000;text-decoration:none;border-radius:6px;font-weight:bold}
-section{max-width:1100px;margin:auto;padding:60px 20px}
-h2{color:#d4af37;text-align:center;margin-bottom:30px}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:#1a1a1a;padding:25px;border-radius:10px;text-align:center}
-footer{background:#000;text-align:center;padding:20px;color:#777}
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25d366;color:#fff;padding:15px 20px;border-radius:50px;text-decoration:none;font-weight:bold}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
+}
+
+header {
+  background: linear-gradient(to right, #000, #1a1a1a);
+  padding: 70px 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #d4af37;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 26px;
+  background: #d4af37;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+h2 {
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.hours {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #d4af37;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>Capital Barbershop</h1>
-<p>Professional Cuts • Clean Fades • Confidence</p>
-<a class="btn" href="#booking">Book Online</a>
-<a class="btn" href="https://wa.me/27649578639" target="_blank">WhatsApp Booking</a>
+  <h1>Capital Barbershop</h1>
+  <p>Professional Cuts • Clean Dye • Confidence</p>
+  <a class="btn" href="#booking">Book Online</a>
+  <a class="btn" href="https://wa.me/27649578639" target="_blank">WhatsApp Booking</a>
 </header>
 
 <section>
 <h2>Our Services</h2>
+
 <div class="services">
-<div class="card">Standard Haircut</div>
-<div class="card">Fade</div>
-<div class="card">Beard Trim</div>
-<div class="card">Haircut + Beard</div>
+
+  <div class="card">
+    <h3>Cut (No Dye)</h3>
+    <p>Clean haircut without dye</p>
+    <strong>R40</strong>
+  </div>
+
+  <div class="card">
+    <h3>Cut & Dye (Black / Blonde)</h3>
+    <p>Haircut with black or blonde dye</p>
+    <strong>R70</strong>
+  </div>
+
+  <div class="card">
+    <h3>Cut & Dye (Other Colours)</h3>
+    <p>Haircut with other colour dyes</p>
+    <strong>R100</strong>
+  </div>
+
+</div>
+</section>
+
+<section>
+<h2>Business Hours</h2>
+<div class="hours">
+  <p><strong>Monday – Saturday</strong></p>
+  <p>08:00 AM – 09:00 PM (21:00)</p>
+  <p><strong>Sunday:</strong> Closed</p>
 </div>
 </section>
 
 <section id="booking">
 <h2>Book an Appointment</h2>
+
 <form onsubmit="sendBooking(event)">
-<input type="text" id="name" placeholder="Your Name" required>
-<input type="tel" id="phone" placeholder="Your Phone Number" required>
-<input type="date" id="date" required>
-<button type="submit">Send Booking</button>
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="tel" id="phone" placeholder="Your Phone Number" required>
+
+  <select id="service">
+    <option>Cut (No Dye) – R40</option>
+    <option>Cut & Dye (Black / Blonde) – R70</option>
+    <option>Cut & Dye (Other Colours) – R100</option>
+  </select>
+
+  <input type="date" id="date" required>
+  <button type="submit">Send Booking</button>
 </form>
 </section>
 
 <section>
 <h2>Find Us</h2>
 <p style="text-align:center;">FC36+2CP Travenna</p>
-<iframe src="https://www.google.com/maps?q=FC36+2CP+Travenna&output=embed"
-width="100%" height="300" style="border:0;" loading="lazy"></iframe>
+
+<iframe
+  src="https://www.google.com/maps?q=FC36+2CP+Travenna&output=embed"
+  width="100%"
+  height="300"
+  style="border:0;"
+  loading="lazy">
+</iframe>
 </section>
 
 <footer>
 © 2026 Capital Barbershop | WhatsApp: 064 957 8639
 </footer>
 
-<a class="whatsapp" href="https://wa.me/27649578639" target="_blank">💬 WhatsApp Us</a>
+<a class="whatsapp" href="https://wa.me/27649578639" target="_blank">
+💬 WhatsApp Us
+</a>
 
 <script>
-function sendBooking(e){
-e.preventDefault();
-let n=document.getElementById("name").value;
-let p=document.getElementById("phone").value;
-let d=document.getElementById("date").value;
-let m=`Hello Capital Barbershop,%0AName: ${n}%0APhone: ${p}%0ADate: ${d}`;
-window.open("https://wa.me/27649578639?text="+m,"_blank");
+function sendBooking(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value;
+  let phone = document.getElementById("phone").value;
+  let service = document.getElementById("service").value;
+  let date = document.getElementById("date").value;
+
+  let message =
+    "Hello Capital Barbershop,%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Service: " + service + "%0A" +
+    "Date: " + date;
+
+  window.open("https://wa.me/27649578639?text=" + message, "_blank");
 }
 </script>
 
